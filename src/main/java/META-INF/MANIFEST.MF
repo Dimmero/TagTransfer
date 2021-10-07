@@ -1,0 +1,5 @@
+Class-Path: Warranty.jar
+Manifest-Version: 1.0
+Main-Class: Runner
+
+
