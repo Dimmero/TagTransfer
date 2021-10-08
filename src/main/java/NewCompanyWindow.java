@@ -10,8 +10,9 @@ public class NewCompanyWindow extends BaseWindow {
     private JTextField companyZipCode;
     private JTextField companyPrefixNumber;
     private JTextField companyTelNumber;
+    private JComboBox companyState;
 
-    public void createNewCompanyWindow(NewCompanyWindow newCompanyWindow) {
+    public void createNewCompanyWindow(NewCompanyWindow newCompanyWindow, JRadioButton button) {
         newCompanyWindow.getPanelForWindow();
 
         JLabel newNameLabel = addNewLabel("Company name:", Color.BLACK);
@@ -50,7 +51,8 @@ public class NewCompanyWindow extends BaseWindow {
         String[] choices = {"Greater Poland", "Kuyavian-Pomeranian", "Lesser Poland", "Lodz", "Lower Silesian", "Lublin",
                 "Lubusz", "Masovian", "Opole", "Podlaskie", "Pomeranian", "Silesian", "Subcarpathian", "Swietokrzyskie",
                 "Warmian-Masurian", "West Pomeranian"};
-        JComboBox<String> companyState = new JComboBox(choices);
+
+        companyState = new JComboBox(choices);
         companyState.setBounds(120, 170, 300, 25);
 
         JLabel newZipCodeLabel = addNewLabel("Zip Code:", Color.BLACK);
@@ -94,7 +96,7 @@ public class NewCompanyWindow extends BaseWindow {
             Company extraCompany = setNewCompany();
             ListOfCompanies.companyList.add(extraCompany);
             newCompanyWindow.getFrame().dispose();
-            MainWindow.radioButtonAddFromCompany.setText(extraCompany.getName());
+            button.setText(extraCompany.getName());
         });
 
         newCompanyWindow.getFrame().setVisible(true);

@@ -10,6 +10,8 @@ public class MainWindow extends BaseWindow {
     private JButton generateFile;
     private JButton generateStats;
     static JLabel success;
+    private ButtonGroup fromButtonGroup;
+    private ButtonGroup toButtonGroup;
     private JRadioButton radioButtonLaptok1;
     private JRadioButton radioButtonLaptok2;
     private JRadioButton radioButtonBufo1;
@@ -57,6 +59,7 @@ public class MainWindow extends BaseWindow {
         mainWindow.getPanel().add(previousOwner);
         mainWindow.getPanel().add(newOwner);
 //        Left column
+
         radioButtonLaptok1 = new JRadioButton("Laptokcom");
         radioButtonLaptok1.setBounds(10, 100, 100, 25);
 
@@ -106,6 +109,21 @@ public class MainWindow extends BaseWindow {
         generateStats = new JButton("Statistics");
         generateStats.setBounds(350, 50, 100, 25);
 
+        fromButtonGroup = new ButtonGroup();
+        fromButtonGroup.add(radioButtonLaptok1);
+        fromButtonGroup.add(radioButtonBufo1);
+        fromButtonGroup.add(radioButtonEco1);
+        fromButtonGroup.add(radioButtonMax1);
+        fromButtonGroup.add(radioButtonDeane1);
+        fromButtonGroup.add(radioButtonAddFromCompany);
+        toButtonGroup = new ButtonGroup();
+        toButtonGroup.add(radioButtonLaptok2);
+        toButtonGroup.add(radioButtonBufo2);
+        toButtonGroup.add(radioButtonEco2);
+        toButtonGroup.add(radioButtonMax2);
+        toButtonGroup.add(radioButtonDeane2);
+        toButtonGroup.add(radioButtonAddToCompany);
+
         mainWindow.getPanel().add(radioButtonLaptok1);
         mainWindow.getPanel().add(radioButtonBufo1);
         mainWindow.getPanel().add(radioButtonEco1);
@@ -147,12 +165,12 @@ public class MainWindow extends BaseWindow {
 
         radioButtonAddToCompany.addActionListener(e -> {
             NewCompanyWindow newCompanyWindow = new NewCompanyWindow();
-            newCompanyWindow.createNewCompanyWindow(newCompanyWindow);
+            newCompanyWindow.createNewCompanyWindow(newCompanyWindow, radioButtonAddFromCompany);
         });
 
         radioButtonAddFromCompany.addActionListener(e -> {
             NewCompanyWindow newCompanyWindow = new NewCompanyWindow();
-            newCompanyWindow.createNewCompanyWindow(newCompanyWindow);
+            newCompanyWindow.createNewCompanyWindow(newCompanyWindow, radioButtonAddToCompany);
         });
 
         button.addActionListener(e -> {
@@ -205,5 +223,6 @@ public class MainWindow extends BaseWindow {
         }
         return checkedCompany;
     }
+
 
 }

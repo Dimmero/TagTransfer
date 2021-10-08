@@ -1,13 +1,6 @@
 import java.io.*;
-
-import org.apache.poi.*;
-import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import test.CycleForStats;
 
 public class OutputToExcel {
     private HSSFWorkbook wb1;

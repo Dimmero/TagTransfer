@@ -2,8 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class BaseWindow {
-        private JFrame frame;
-        private JPanel panel;
+    private JFrame frame;
+    private JPanel panel;
 
     public BaseWindow() {
         this.frame = new JFrame("Service Tag Transfer App");
